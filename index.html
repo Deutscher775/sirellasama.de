@@ -1,1 +1,461 @@
-<p>Hi</p>
+<meta content="Sirellasama | Home" property="og:title" />
+    <meta content="Sirellasamas Website" property="og:description" />
+    <meta content="https://sirellasama.de" property="og:url" />
+    <meta content="https://raw.githubusercontent.com/Deutscher775/sirellasama.de/main/website-image.png?raw=true" property="og:image" />
+    <meta content="#430cf7" data-react-helmet="true" name="theme-color"/>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirellasama | Home</title>
+</head>
+<style>
+    body {
+        background-color: #333;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .social-links,
+    .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-btn {
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        font-family: 'Titillium Web', sans-serif;
+        color: #333;
+        border-radius: 10px;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+        background: white;
+        margin: 5px;
+        transition: 0.3s;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    .social-btn svg {
+        height: 24px;
+        width: 24px;
+    }
+
+    .social-btn span {
+        width: 0px;
+        overflow: hidden;
+        transition: 0.3s;
+        text-align: center;
+        margin-left: 5px;
+    }
+
+    .social-btn:hover {
+        width: 150px;
+        border-radius: 5px;
+    }
+
+    .social-btn:hover span {
+        padding: 2px;
+        width: 80px;
+    }
+
+    #twitch:hover {
+        background-color: #6441a5;
+        color: #fff;
+    }
+
+    #twitch:hover svg {
+        filter: invert();
+    }
+
+    #tiktok:hover {
+        background-color: #EE1D52;
+        color: #fff;
+    }
+
+    #tiktok:hover svg {
+        filter: invert();
+    }
+
+    #twitter:hover {
+        background-color: #00acee;
+        color: #fff;
+    }
+
+    #twitter:hover svg {
+        filter: invert();
+    }
+
+    #discord:hover {
+        background-color: #5865F2;
+        color: #fff;
+    }
+
+    #discord:hover svg {
+        filter: invert();
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .preview img {
+        width: 200px;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+
+    .text {
+        color: #fff;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 30px;
+    }
+
+    #desc {
+        font-size: 20px;
+    }
+
+    .card-upload {
+        width: min(550px, 80vw);
+        height: 200px;
+        border-radius: 20px;
+        background: #f5f5f5;
+        position: relative;
+        padding: 1.8rem;
+        border: 2px solid #c3c6ce;
+        overflow: visible;
+        font-family: 'Titillium Web', sans-serif;
+        margin: 0 auto;
+        vertical-align: top;
+        position: relative;
+        margin-bottom: 40px;
+    }
+
+    .card-upload-details {
+        color: black;
+        height: 100%;
+        gap: .5em;
+        display: grid;
+        place-content: center;
+        width: 250px;
+        display: grid;
+    }
+
+    .card-upload-button {
+        transform: translate(-50%, 125%);
+        width: 60%;
+        border-radius: 1rem;
+        border: none;
+        background-color: #008bf8;
+        color: #fff;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.3s ease-out;
+        cursor: pointer;
+    }
+
+    .text-upload-body {
+        color: rgb(134, 134, 134);
+    }
+
+    .text-upload-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .card-upload:hover {
+        border-color: #008bf8;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .card-upload:hover .card-upload-button {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+    }
+
+    .img-upload {
+        width: fit-content;
+    }
+
+    .img-upload img {
+        width: 150px;
+        float: right;
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 8%;
+        border-radius: 10px;
+    }
+
+    .img-upload+.img-upload-resp {
+        display: none;
+    }
+
+    @media screen and (min-width: 531px) {
+        .img-upload-resp {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 530px) {
+        .card-upload {
+            width: 75%;
+            text-align: center;
+            height: fit-content;
+            margin-top: -20px;
+            margin-bottom: 70px;
+        }
+
+        .card-upload-details {
+            margin: 0 auto;
+        }
+
+        .img-upload {
+            display: none;
+        }
+
+        .img-upload-resp {
+            display: inline;
+        }
+
+        .img-upload-resp img {
+            width: 150px;
+            border-radius: 10px;
+        }
+    }
+
+
+
+
+    .card-history {
+        width: min(550px, 80vw);
+        height: 270px;
+        border-radius: 20px;
+        background: #f5f5f5;
+        position: relative;
+        padding: 1.8rem;
+        border: 2px solid #c3c6ce;
+        overflow: visible;
+        font-family: 'Titillium Web', sans-serif;
+        margin: 0 auto;
+        vertical-align: top;
+        position: relative;
+    }
+
+    .card-history-details {
+        color: black;
+        height: 100%;
+        gap: .5em;
+        display: grid;
+        place-content: center;
+        width: 250px;
+        display: grid;
+    }
+
+    .card-history-button {
+        transform: translate(-50%, 125%);
+        width: 60%;
+        border-radius: 1rem;
+        border: none;
+        background-color: #008bf8;
+        color: #fff;
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.3s ease-out;
+        cursor: pointer;
+    }
+
+    .text-history-body {
+        color: rgb(134, 134, 134);
+    }
+
+    .text-history-title {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .card-history:hover {
+        border-color: #008bf8;
+        box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .card-history:hover .card-history-button {
+        transform: translate(-50%, 50%);
+        opacity: 1;
+    }
+
+    .img-history {
+        width: fit-content;
+    }
+
+    .img-history img {
+        width: 150px;
+        float: right;
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        right: 8%;
+        border-radius: 10px;
+    }
+
+    .img-history+.img-history-resp {
+        display: none;
+    }
+
+    @media screen and (min-width: 531px) {
+        .img-history-resp {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 530px) {
+        .card-history {
+            width: 75%;
+            text-align: center;
+            height: fit-content;
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+
+        .card-history-details {
+            margin: 0 auto;
+        }
+
+        .img-history {
+            display: none;
+        }
+
+        .img-history-resp {
+            display: inline;
+        }
+
+        .img-history-resp img {
+            width: 150px;
+            border-radius: 10px;
+        }
+    }
+
+    .info {
+        height: 50px;
+        border-radius: 20px;
+        width: 30%;
+        margin: 0 auto;
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    .info p{
+        text-decoration: none;
+        font-family: 'Titillium Web', sans-serif;
+        color: #000;
+        border: 10px solid #fff;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .info a{
+        margin-right: 30px;
+        color: #430cf7;
+    }
+
+</style>
+
+<body>
+    <div class="preview">
+        <img src="assets/website-image.png" alt="pfp">
+        <div class="text">
+            <p id="header">Sirellasama</p>
+            <p id="desc">VTuber <br>
+                Content-Creator</p>
+
+        </div>
+    </div>
+    <div class="social-links">
+        <a href="https://sirellasama.de/twitter">
+            <div id="twitter" class="social-btn flex-center">
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                    </path>
+                </svg><span>Twitter</span>
+            </div>
+        </a>
+
+        <a href="https://sirellasama.de/discord">
+            <div id="discord" class="social-btn flex-center">
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z"
+                        fill="#000000" />
+                </svg><span>Discord</span>
+            </div>
+        </a>
+
+        <a href="https://sirellasama.de/twitch">
+            <div id="twitch" class="social-btn flex-center">
+                <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+                </svg><span>Twitch</span>
+            </div>
+        </a>
+        <a href="https://sirellasama.de/tiktok">
+            <div id="tiktok" class="social-btn flex-center">
+                <svg viewBox="0 0 32 32" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z">
+                    </path>
+                </svg>
+                <span>Tiktok</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="card-upload">
+        <div class="img-upload">
+            <img src="assets/website-image-card-1.png" alt="">
+        </div>
+        <div class="card-upload-details">
+            <p class="text-upload-title">Uploads</p>
+            <p class="text-upload-body">Täglich Lade ich neue Videos hoch oder bin Montag, Mittwoch, Freitag und Samstag
+                ab 19
+                Uhr immer Live auf Tiktok und Twitch. Dort hat auch meine Community die Möglichkeit, mit mir zusammen zu
+                zocken. </p>
+        </div>
+        <a href="https://sirellasama.de/tiktok"><button class="card-upload-button">Videos anschauen</button></a>
+        <div class="img-upload-resp">
+            <img src="assets/website-image-card-1.png" alt="">
+        </div>
+    </div>
+    <div class="card-history">
+        <div class="img-history">
+            <img src="assets/website-image-card-2.png" alt="">
+        </div>
+        <div class="card-history-details">
+            <p class="text-history-title">Geschichte</p>
+            <p class="text-history-body">Wir alle haben eine Leidenschaft für etwas. Das hier ist meine! Schon als Kind habe ich mich für Musik und Gaming Interessiert, immer wieder habe ich versucht mich selbst zu Präsentieren doch erst als Vtuber habe ich es geschafft, mich selbst wirklich zu Zeigen. Seit einiger Zeit bin ich nun vor allem auf Tiktok und Twitch unterwegs. </p>
+        </div>
+        <a href="https://sirellasama.de/discord"><button class="card-history-button">Fragen stellen</button></a>
+        <div class="img-history-resp">
+            <img src="assets/website-image-card-2.png" alt="">
+        </div>
+    </div>
+    <div class="info">
+        <p><a href="https://sirellasama.de/impressum">Impressum</a> <a href="https://sirellasama.de" style="margin: 0;">Sirellasama</a> &copy; 2023</p>
+    </div>
+</body>
+
+</html>
